@@ -66,13 +66,24 @@ bool evenNumberOfAtoms(list p){
     if(is_null(p)){
         return true;
     }
-    return evenNumberOfAtoms(cdr(p)) % 2 == 0;
+    if(is_null(cdr(p))){
+      return false;
+    }
+
+    return (evenNumberOfAtoms(cdr(cdr(p))));
+
+
 }
 
 bool everyOtherAtom(list p, list q){
-    if(is_null(p) || is_null(q)){
+    if(is_null(p)){
         return true;
     }
+    if(is_null(q))
+    {
+        return false;
+    }
+
     if(!eq(car(p),car(cdr(q)))){
         return false;
     }
