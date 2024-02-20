@@ -32,7 +32,7 @@ int numAtomsAtTheTopLevel(list p);
 // input: () output 0
 
 bool find(list p, list q);
-// p is a list that contains atoms q is an atom
+// p is a list that contains atoms, q is an atom
 // does p have an atom whose value is the same as that of q?
 
 // To compare atoms, you will have to use function eq defined below.

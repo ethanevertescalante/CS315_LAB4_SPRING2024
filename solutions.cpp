@@ -22,4 +22,65 @@ int numNodesAtTheTopLevel(list p) {
     return 1 + numNodesAtTheTopLevel(cdr(p));
 }
 
+int numAtomsAtTheTopLevel(list p)
+{
+    if(is_null(p)){
+        return 0;
+    }
+
+    if(is_atom(car(p))){
+        return 1 + numAtomsAtTheTopLevel(cdr(p));
+    }
+
+    return numAtomsAtTheTopLevel(cdr(p));
+
+}
+
+bool find(list p, list q){
+   if(is_null(p)){
+       return false;
+   }
+
+  if(eq(car(p),q)){
+      return true;
+  }
+
+  return find(cdr(p),q);
+
+}
+
+bool areEqual(list p, list q){
+    if(is_null(p)){
+        return true;
+    }
+
+    if(!eq(car(p), car(q))){
+        return false;
+    }
+
+    return areEqual(cdr(p), cdr(q));
+
+}
+
+bool evenNumberOfAtoms(list p){
+    if(is_null(p)){
+        return true;
+    }
+    return evenNumberOfAtoms(cdr(p)) % 2 == 0;
+}
+
+bool everyOtherAtom(list p, list q){
+    if(is_null(p) || is_null(q)){
+        return true;
+    }
+    if(!eq(car(p),car(cdr(q)))){
+        return false;
+    }
+
+    return everyOtherAtom(cdr(p),cdr(cdr(q)) );
+
+
+
+}
+
 
