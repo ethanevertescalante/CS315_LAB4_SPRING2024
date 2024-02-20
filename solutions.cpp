@@ -1,3 +1,6 @@
+//James Togher
+//Ethan Escalante
+
 #include "reclists.hpp"
 #include "solutions.hpp"
 
